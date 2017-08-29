@@ -1,10 +1,10 @@
 declare module 'sass-cleaner' {
   export const version: string;
 
-  export type Token = {
-    key: string,
-    value: string
-  }
+  export type Token = string;
+  export type TokenList = {
+    COMMENT, SELECTOR
+  };
 
   export const tokenTable: Array<Token>;
 
@@ -16,6 +16,7 @@ declare module 'sass-cleaner' {
   export class Tokeniser {
     constructor();
     public tokenize(content: string): Array<Token>;
+    public static tokens(): TokenList;
   }
 
   export class Normaliser {
