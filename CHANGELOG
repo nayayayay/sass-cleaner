@@ -1,0 +1,10 @@
+v2.0.0:
+  * Now using a tokenizer instead of simple regexp, any code style of CSS handled.
+  * The internal module api is now available programmatically using require / import.
+  * Adds support for typescript types
+
+v1.0.1:
+  * Fixes npm versionning.
+
+v1.0.0:
+  * Initial stable version.
