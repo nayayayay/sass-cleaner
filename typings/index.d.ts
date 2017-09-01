@@ -15,13 +15,13 @@ declare module 'sass-cleaner' {
 
   export class Tokeniser {
     constructor();
-    public tokenize(content: string): Array<Token>;
+    public tokenise(content: string): Array<Token>;
     public static tokens(): TokenList;
   }
 
   export class Normaliser {
     constructor();
-    public normalize(tokenList: Array<Token>): string;
+    public normalise(tokenList: Array<Token>): string;
   }
 
   export function clean(content: string|string[]): string|string[];
