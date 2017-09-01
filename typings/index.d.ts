@@ -1,13 +1,6 @@
 declare module 'sass-cleaner' {
   export const version: string;
 
-  export type Token = string;
-  export type TokenList = {
-    COMMENT, SELECTOR
-  };
-
-  export const tokenTable: Array<Token>;
-
   export class Parser {
     constructor();
     public parse(content: string): string;
@@ -15,13 +8,16 @@ declare module 'sass-cleaner' {
 
   export class Tokeniser {
     constructor();
-    public tokenise(content: string): Array<Token>;
-    public static tokens(): TokenList;
+    public tokenise(content: string): Array<string>;
+    public static tokens(): {
+      COMMENT: 0,
+      SELECTOR: 1
+    };
   }
 
   export class Normaliser {
     constructor();
-    public normalise(tokenList: Array<Token>): string;
+    public normalise(tokenList: Array<string>): string;
   }
 
   export function clean(content: string|string[]): string|string[];
