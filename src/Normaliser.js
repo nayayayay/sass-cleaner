@@ -1,4 +1,4 @@
-const { Tokeniser } = require('./index');
+const Tokeniser = require('./Tokeniser');
 
 /**
  * Transform a token based array into beautified CSS.
@@ -23,4 +23,4 @@ class Normaliser {
   }
 }
 
-module.export = Tokeniser;
+module.exports = Tokeniser;

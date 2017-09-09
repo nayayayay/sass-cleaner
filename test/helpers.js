@@ -1,4 +1,4 @@
-const {Tokeniser} = require('../src/Tokeniser');
+const {Tokeniser} = require('../src/index');
 
 // Get the tokens
 const { COMMENT, SELECTOR } = Tokeniser.tokens();
@@ -12,20 +12,24 @@ const data = `
       body{ margin: 0; background-color :   
            
                   #0fa401}
+                  .container {width:100%;
+                    display:flex;
+                
+                }
 
     `;
 
 // Expected tokenisation from data
 const expectedTokenisation = [
-  COMMENT, '[CSS ;-;]',
+  COMMENT, '  CSS ;-;    ',
   SELECTOR,
-  '[html, body]',
-  '[margin]', '[0]',
-  '[background-color]', '[#0fa401]',
+  'html, body',
+  'margin', '0',
+  'background-color', '#0fa401',
   SELECTOR,
-  '[.container]',
-  '[width]', '[100%]',
-  '[display]', '[flex]'
+  '.container',
+  'width', '100%',
+  'display', 'flex'
 ];
 
 // Expected normalisation from tokenisation

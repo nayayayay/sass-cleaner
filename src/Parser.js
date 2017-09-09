@@ -1,4 +1,5 @@
-const {Tokeniser, Normaliser} = require('./index');
+const Tokeniser = require('./Tokeniser');
+const Normaliser = require('./Normaliser');
 
 /**
  * Beautify CSS by tokenising it then normalising it using the
@@ -25,4 +26,4 @@ class Parser {
   }
 }
 
-module.export = Parser;
+module.exports = Parser;
